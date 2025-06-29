@@ -13,6 +13,10 @@ namespace DATA_UTILITY.IL
     public class CmdExecuter
     {
         private readonly string _connectionString;
+        public CmdExecuter()
+        {
+            _connectionString = getEnvironmentVarData.GetEnvironmentConnString();
+        }
         public CmdExecuter(string connectionsting)
         {
             _connectionString = connectionsting;
@@ -117,4 +121,22 @@ namespace DATA_UTILITY.IL
 
 
     }
+
+    public static class getEnvironmentVarData
+    {
+        public static string GetEnvironmentConnString()
+        {
+            string ConnString = string.Empty;
+
+            // Check whether the environment variable exists.
+            ConnString = Environment.GetEnvironmentVariable("CONN_STRING");
+            if (string.IsNullOrEmpty(ConnString))
+            {
+                Environment.SetEnvironmentVariable("CONN_STRING", "Value1");
+                ConnString = Environment.GetEnvironmentVariable("CONN_STRING");
+            }
+            return ConnString;
+        }
+    }
+
 }

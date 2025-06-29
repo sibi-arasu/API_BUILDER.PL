@@ -13,6 +13,7 @@ namespace API_BUILDER.PL.Controllers
         [Route("{controller}/{action}")]
         public string getData()
         {
+
             return "s";
         }
     }
