@@ -9,5 +9,11 @@ namespace API_BUILDER.PL.Controllers
 {
     public class AtomCreationController : ApiController
     {
+        [HttpPost]
+        [Route("{controller}/{action}")]
+        public string getData()
+        {
+            return "s";
+        }
     }
 }
