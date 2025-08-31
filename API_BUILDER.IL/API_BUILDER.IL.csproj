@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{28AD533C-082A-4F50-AE57-99D96DBF896D}</ProjectGuid>
+    <ProjectGuid>{436823A7-5B20-41BC-B9DC-25A0CF937A27}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DATA_UTILITY.IL</RootNamespace>
-    <AssemblyName>DATA_UTILITY.IL</AssemblyName>
+    <RootNamespace>API_BUILDER.IL</RootNamespace>
+    <AssemblyName>API_BUILDER.IL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CHelperFns.cs" />
-    <Compile Include="CmdExecuter.cs" />
-    <Compile Include="LOGGER.BL.cs" />
-    <Compile Include="LoggerIL.cs" />
+    <Compile Include="AtomCreation_IL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATA_UTILITY.IL\DATA_UTILITY.IL.csproj">
+      <Project>{28ad533c-082a-4f50-ae57-99d96dbf896d}</Project>
+      <Name>DATA_UTILITY.IL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

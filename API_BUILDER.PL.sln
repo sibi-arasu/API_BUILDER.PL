@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_BUILDER.PL", "API_BUILD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATA_UTILITY.IL", "DATA_UTILITY.IL\DATA_UTILITY.IL.csproj", "{28AD533C-082A-4F50-AE57-99D96DBF896D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_BUILDER.IL", "API_BUILDER.IL\API_BUILDER.IL.csproj", "{436823A7-5B20-41BC-B9DC-25A0CF937A27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{28AD533C-082A-4F50-AE57-99D96DBF896D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28AD533C-082A-4F50-AE57-99D96DBF896D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28AD533C-082A-4F50-AE57-99D96DBF896D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436823A7-5B20-41BC-B9DC-25A0CF937A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436823A7-5B20-41BC-B9DC-25A0CF937A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436823A7-5B20-41BC-B9DC-25A0CF937A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436823A7-5B20-41BC-B9DC-25A0CF937A27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
