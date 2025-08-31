@@ -86,7 +86,7 @@ namespace API_BUILDER.IL
             }
         }
 
-        public bool Post(AtomCreationModel objModel)
+        public bool Post(AtomCreationModel model)
         {
             bool isValid = false;
 
@@ -94,6 +94,36 @@ namespace API_BUILDER.IL
             CmdExecuter cmd = new CmdExecuter();
             StringBuilder sbQuery = new StringBuilder();
             ArrayList list = new ArrayList();
+            if (string.IsNullOrEmpty(model.AtomID))
+            {
+               model.AtomID = CHelperFns.GetRandomId();
+            }
+            if (string.IsNullOrEmpty(model.AtomDefinitonID))
+            {
+                model.AtomDefinitonID = CHelperFns.GetRandomId();
+            }
+
+            sbQuery.Append(" INSERT INTO ATOM_DTLS  (AtomID, AtomDefinitonID, AtomName, CreatedBy, CreatedOn) VALUES(");
+            sbQuery.Append($"'{model.AtomID}', '{model.AtomDefinitonID}','{model.AtomName}','{model.CreatedBy}', ");
+            sbQuery.Append($"'{model.CreatedOn?.ToString("yyyy-MM-dd HH:mm:ss") ?? "GETDATE()"}' )");
+            list.Add(sbQuery.ToString());
+            sbQuery.Clear();
+
+            foreach (var param in model.InputParam ?? new List<AtomParams>())
+            {
+                
+                sbQuery.Append("INSERT INTO ATOM_PARAMS (AtomID, ParamKey, ParamValue, ParamType) VALUES( ");
+                sbQuery.Append($"'{model.AtomID}','{param.Key}','{param.Value}', INPUT )");
+                list.Add(sbQuery.ToString());
+                sbQuery.Clear();
+            }
+            foreach (var param in model.OutputParam ?? new List<AtomParams>())
+            {
+                sbQuery.Append("INSERT INTO ATOM_PARAMS (AtomID, ParamKey, ParamValue, ParamType) VALUES( ");
+                sbQuery.Append($"'{model.AtomID}','{param.Key}','{param.Value}', OUTPUT )");
+                list.Add(sbQuery.ToString());
+                sbQuery.Clear();
+            }
 
             ds = cmd.ExecuteQueryWithReader(list);
             
