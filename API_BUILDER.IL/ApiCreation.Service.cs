@@ -121,7 +121,7 @@ namespace API_BUILDER.IL
 using System.Web.Http;
 using APIBuilder.Models;
 
-namespace APIBuilder.Controllers
+namespace API_BUILDER.PL.Controllers
 {{
     public class {apiName}Controller : ApiController
     {{
