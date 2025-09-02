@@ -14,6 +14,7 @@ namespace API_BUILDER.IL.APICREATION_MODEL
     {
         public string ApiID { get; set; }
         public string ApiName { get; set; }
+        public string ApiVersion { get; set; }
         public string MethodName { get; set; }
         public string AtomID { get; set; }
         public string CreatedBy { get; set; }
@@ -37,7 +38,7 @@ namespace API_BUILDER.IL
             if (string.IsNullOrEmpty(model.ApiID))
                 model.ApiID = CHelperFns.GetRandomId();
 
-            if (DoesMethodExist(model.ApiID, model.MethodName))
+            /*if (DoesMethodExist(model.ApiID, model.MethodName))
             {
                 Console.WriteLine($"Method '{model.MethodName}' already exists in API '{model.ApiName}'.");
                 Console.WriteLine("Choose an option:");
@@ -50,7 +51,8 @@ namespace API_BUILDER.IL
                     model.ApiName = $"{model.ApiName}V2";
                     model.ApiID = CHelperFns.GetRandomId();
                 }
-            }
+            }*/
+            
 
             InsertApiMetadata(model);
             GenerateControllerOrAppendMethod(model);
